@@ -17,7 +17,7 @@ npm install correios --save
 ##Como utilizar
 
 
-```
+```javascript
 var Correios = require('./lib/correios'),
     correios = new Correios(); //cria um novo objeto correios
 
