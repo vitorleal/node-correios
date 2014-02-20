@@ -1,3 +1,2 @@
 "use strict";
-
-module.exports = require('./lib/correios'),
+module.exports = require('./lib/correios');

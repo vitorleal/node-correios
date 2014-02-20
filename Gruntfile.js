@@ -18,7 +18,8 @@ module.exports = function(grunt) {
         eqnull: true,
         strict: true,
         globals: {
-          require: true
+          require: true,
+          module: true
         }
       },
       gruntfile: {

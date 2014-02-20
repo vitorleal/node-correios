@@ -12,7 +12,8 @@
   "author": "Vitor Leal <vitorleal1@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "soap": "~0.4.0"
+    "soap": "~0.4.0",
+    "node.extend": "~1.0.9"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
