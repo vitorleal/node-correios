@@ -76,7 +76,7 @@ Retorno com **sucesso**
 Envie todos os campos obrigatórios
 ```
 
-####Métodos
+###Métodos
 O método implementado é o getPrice
 
 #####correios.getPrice(args);
