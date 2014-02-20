@@ -40,6 +40,42 @@ correios.on('error', function (err) {
 
 No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
 
+- ```result``` - Array com o resultado da pesquisa
+#####Exemplo de resultado
+Retorno com **sucesso**
+
+	```
+[{ 
+	Codigo: 40010,
+    Valor: '23,30',
+    ValorMaoPropria: '0,00',
+    ValorAvisoRecebimento: '0,00',
+    ValorValorDeclarado: '0,00',
+    Erro: {},
+    MsgErro: {}
+}]
+```
+
+	Retorno com **erro**
+
+	```
+[{ 
+	Codigo: 40010,
+    Valor: '0,00',
+    ValorMaoPropria: '0,00',
+    ValorAvisoRecebimento: '0,00',
+    ValorValorDeclarado: '0,00',
+    Erro: '-20',
+    MsgErro: 'A largura nao pode ser inferior a 11 cm.'
+}]
+```
+
+- ```error```  - Retorna o erro ocorrido na execução
+#####Exemplo de erro
+	```
+Envie todos os campos obrigatórios
+```
+
 ####Métodos
 O método implementado é o getPrice
 
@@ -118,45 +154,6 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 	- S = sim
 	- N = não **PADRÃO**
 
-
-
-###Resultado
-
-- ```result``` - Array com o resultado da pesquisa
-#####Exemplo de resultado
-Retorno com **sucesso**
-
-	```
-[{ 
-	Codigo: 40010,
-    Valor: '23,30',
-    ValorMaoPropria: '0,00',
-    ValorAvisoRecebimento: '0,00',
-    ValorValorDeclarado: '0,00',
-    Erro: {},
-    MsgErro: {}
-}]
-```
-
-	Retorno com **erro**
-
-	```
-[{ 
-	Codigo: 40010,
-    Valor: '0,00',
-    ValorMaoPropria: '0,00',
-    ValorAvisoRecebimento: '0,00',
-    ValorValorDeclarado: '0,00',
-    Erro: '-20',
-    MsgErro: 'A largura nao pode ser inferior a 11 cm.'
-}]
-```
-
-- ```error```  - Retorna o erro ocorrido na execução
-#####Exemplo de erro
-	```
-Envie todos os campos obrigatórios
-```
 
 ##Autor
 
