@@ -1,12 +1,12 @@
 #Correios NodeJS
-================
+
 Módulo de [nodeJS](http://nodejs.org) que utiliza a API dos Correios.
 [API dos Correios](http://www.correios.com.br/webServices/PDF/SCPP_manual_implementacao_calculo_remoto_de_precos_e_prazos.pdf)
 
 
 
 ##Como instalar
----------------
+
 Para instalar é bem simples. Basta utilizar o [NPM](npmjs.org) utilizando a *flag* **--save** para guardar como dependência no seu **package.json**
 
 ```
@@ -15,7 +15,7 @@ npm install correios --save
 
 
 ##Como utilizar
----------------
+
 
 ```
 var Correios = require('./lib/correios'),
@@ -37,7 +37,7 @@ correios.on('error', function (err) {
 
 
 ##Documentação
---------------
+
 No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
 
 ####Métodos
@@ -154,16 +154,16 @@ Retorno com **sucesso**
 
 - ```error```  - Retorna o erro ocorrido na execução
 #####Exemplo de erro
-```
+	```
 Envie todos os campos obrigatórios
 ```
 
 ##Autor
---------
+
 | [![twitter/vitorleal](http://gravatar.com/avatar/e133221d7fbc0dee159dca127d2f6f00?s=80)](http://twitter.com/vitorleal "Follow @vitorleal on Twitter") |
 |---|
 | [Vitor Leal](http://vitorleal.com) |
 
 ##Licença
-----------
+
 Veja [LICENSE.txt](https://github.com/vitorleal/correios/blob/master/LICENSE.txt)
