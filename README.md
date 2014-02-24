@@ -10,7 +10,7 @@ Módulo de [nodeJS](http://nodejs.org) que utiliza a API dos Correios para calcu
 Para instalar é bem simples. Basta utilizar o [NPM](npmjs.org) utilizando a *flag* **--save** para guardar como dependência no seu **package.json**
 
 ```
-npm install correios --save
+npm install node-correios --save
 ```
 
 
