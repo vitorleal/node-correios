@@ -18,7 +18,7 @@ npm install correios --save
 
 
 ```javascript
-var Correios = require('./lib/correios'),
+var Correios = require('node-correios'),
     correios = new Correios(); //cria um novo objeto correios
 
 //executa o método de pesquisa de valor do frete
