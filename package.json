@@ -1,5 +1,5 @@
 {
-  "name": "correios",
+  "name": "node-correios",
   "version": "0.1.0",
   "description": "Soap client for Correios Brasil",
   "main": "index.js",
