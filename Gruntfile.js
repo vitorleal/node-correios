@@ -22,11 +22,8 @@ module.exports = function(grunt) {
           module: true
         }
       },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
       lib: {
-        src: ['lib/*.js']
+        src: ['Gruntfile.js', 'lib/*.js', 'index.js']
       }
     },
     watch: {
