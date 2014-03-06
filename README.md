@@ -20,10 +20,10 @@ npm install node-correios --save
 
 ```javascript
 var Correios = require('node-correios'),
-    correios = new Correios(); //cria um novo objeto correios
+    correios = new Correios();
 
 //executa o método de pesquisa de valor do frete
-correios.getPrice(args);
+correios.calcPreco(args);
 
 //qunado o evento result for emitido faz um log do retorno da api
 correios.on('result', function (result) {
@@ -33,6 +33,10 @@ correios.on('result', function (result) {
 //se ocorreu algum erro na execução faz um log do erro
 correios.on('error', function (err) {
   console.log(err);
+});
+
+correios.calcPreco(args, function (result) {
+  console.log(result);
 });
 ```
 
@@ -78,9 +82,11 @@ Envie todos os campos obrigatórios
 ```
 
 ###Métodos
-O método implementado é o getPrice
+Os métodos implementados são: calcPreco e calcPrecoPrazo
 
-#####correios.getPrice(args);
+#####correios.calcPreco(args);
+
+#####correios.calcPrecoPrazo(args);
 
 Para executar o comando tem que enviar os campos **obrigatórios**. Para mais detalhes e informações veja o [PDF da API dos correios](http://www.correios.com.br/webServices/PDF/SCPP_manual_implementacao_calculo_remoto_de_precos_e_prazos.pdf)
 
