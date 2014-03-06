@@ -35,6 +35,7 @@ correios.on('error', function (err) {
   console.log(err);
 });
 
+//se você não quer um resultado assíncrono utilize um callback
 correios.calcPreco(args, function (result) {
   console.log(result);
 });
