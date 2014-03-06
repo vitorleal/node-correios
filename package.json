@@ -1,6 +1,6 @@
 {
   "name": "node-correios",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Soap client for Correios Brasil",
   "main": "index.js",
   "scripts": {
