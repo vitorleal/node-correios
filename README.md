@@ -46,6 +46,7 @@ correios.calcPreco(args, function (result) {
 No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
 
 - ```result``` - Array com o resultado da pesquisa
+
 #####Exemplo de resultado
 Retorno com **sucesso**
 
@@ -76,6 +77,7 @@ Retorno com **erro**
 ```
 
 - ```error```  - Retorna o erro ocorrido na execução
+
 #####Exemplo de erro
 ```
 Envie todos os campos obrigatórios
