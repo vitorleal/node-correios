@@ -49,8 +49,8 @@ No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://
 #####Exemplo de resultado
 Retorno com **sucesso**
 
-```json
-[{ 
+```
+[{
 	Codigo: 40010,
 	Valor: '23,30',
 	ValorMaoPropria: '0,00',
@@ -63,8 +63,8 @@ Retorno com **sucesso**
 
 Retorno com **erro**
 
-```json
-[{ 
+```
+[{
 	Codigo: 40010,
 	Valor: '0,00',
 	ValorMaoPropria: '0,00',
