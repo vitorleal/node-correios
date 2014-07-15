@@ -43,42 +43,41 @@ correios.calcPreco(args, function (result) {
 
 
 ##Documentação
-
 No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
 
 - ```result``` - Array com o resultado da pesquisa
 #####Exemplo de resultado
 Retorno com **sucesso**
 
-	```
+```json
 [{ 
 	Codigo: 40010,
-    Valor: '23,30',
-    ValorMaoPropria: '0,00',
-    ValorAvisoRecebimento: '0,00',
-    ValorValorDeclarado: '0,00',
-    Erro: {},
-    MsgErro: {}
+	Valor: '23,30',
+	ValorMaoPropria: '0,00',
+	ValorAvisoRecebimento: '0,00',
+    	ValorValorDeclarado: '0,00',
+    	Erro: {},
+    	MsgErro: {}
 }]
 ```
 
-	Retorno com **erro**
+Retorno com **erro**
 
-	```
+```json
 [{ 
 	Codigo: 40010,
-    Valor: '0,00',
-    ValorMaoPropria: '0,00',
-    ValorAvisoRecebimento: '0,00',
-    ValorValorDeclarado: '0,00',
-    Erro: '-20',
-    MsgErro: 'A largura nao pode ser inferior a 11 cm.'
+	Valor: '0,00',
+	ValorMaoPropria: '0,00',
+	ValorAvisoRecebimento: '0,00',
+	ValorValorDeclarado: '0,00',
+	Erro: '-20',
+	MsgErro: 'A largura nao pode ser inferior a 11 cm.'
 }]
 ```
 
 - ```error```  - Retorna o erro ocorrido na execução
 #####Exemplo de erro
-	```
+```
 Envie todos os campos obrigatórios
 ```
 
