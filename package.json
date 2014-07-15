@@ -4,7 +4,7 @@
   "description": "Soap client for Correios Brasil",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "make test"
   },
   "keywords": [
     "correios",
@@ -23,6 +23,8 @@
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt-contrib-watch": "~0.5.3",
+    "mocha": "^1.20.1",
+    "should": "^4.0.4"
   }
 }
