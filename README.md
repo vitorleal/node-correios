@@ -55,9 +55,9 @@ Retorno com **sucesso**
 	Valor: '23,30',
 	ValorMaoPropria: '0,00',
 	ValorAvisoRecebimento: '0,00',
-    	ValorValorDeclarado: '0,00',
-    	Erro: {},
-    	MsgErro: {}
+	ValorValorDeclarado: '0,00',
+	Erro: {},
+	MsgErro: {}
 }]
 ```
 
