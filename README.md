@@ -1,9 +1,12 @@
 #Correios NodeJS [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
-[![NPM](https://nodei.co/npm/node-correios.png)](https://nodei.co/npm/node-correios/)	
+[![NPM](https://nodei.co/npm/node-correios.png)](https://nodei.co/npm/node-correios/)
 
 Módulo de [nodeJS](http://nodejs.org) que utiliza a API dos Correios para calcular frete de envio.
 [API dos Correios](http://www.correios.com.br/webServices/PDF/SCPP_manual_implementacao_calculo_remoto_de_precos_e_prazos.pdf)
 
+
+##Teste nessa aplicação de exemplo
+[App de exemplo do node-correios](http://correios-server.herokuapp.com/frete?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
 
 
 ##Como instalar
@@ -95,16 +98,16 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 #######Obrigatórios
 - ``nCdServico`` - **String**
 
-	Código do serviço: 
+	Código do serviço:
 	- 40010 = SEDEX Varejo
-	- 40045 = SEDEX a Cobrar Varejo 
-	- 40215 = SEDEX 10 Varejo 
-	- 40290 = SEDEX Hoje Varejo 
+	- 40045 = SEDEX a Cobrar Varejo
+	- 40215 = SEDEX 10 Varejo
+	- 40290 = SEDEX Hoje Varejo
 	- 41106 = PAC Varejo
-	
+
 - ``sCepOrigem`` - **String**
 
-	CEP de Origem sem hífen. Exemplo: **05311900** 
+	CEP de Origem sem hífen. Exemplo: **05311900**
 
 - ``sCepDestino`` - **String**
 
@@ -117,13 +120,13 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 - ``nCdFormato`` - **Inteiro**
 
 	Formato da encomenda (incluindo embalagem)
-	- 1 = Formato caixa/pacote 
-	- 2 = Formato rolo/prisma 
-	- 3 = Envelope 
+	- 1 = Formato caixa/pacote
+	- 2 = Formato rolo/prisma
+	- 3 = Envelope
 
 - ``nVlComprimento`` - **Decimal**
 
-	Comprimento da encomenda (incluindo embalagem), em centímetros 
+	Comprimento da encomenda (incluindo embalagem), em centímetros
 
 - ``nVlAltura`` - **Decimal**
 
@@ -151,7 +154,7 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 	Indica se a encomenda será entregue com o serviço adicional mão própria
 	- S = sim
 	- N = não **PADRÃO**
-	
+
 
 - ``nVlValorDeclarado`` - **Decimal**
 
