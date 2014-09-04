@@ -5,7 +5,7 @@ Módulo de [nodeJS](http://nodejs.org) que utiliza a API dos Correios para calcu
 [API dos Correios](http://www.correios.com.br/webServices/PDF/SCPP_manual_implementacao_calculo_remoto_de_precos_e_prazos.pdf)
 
 
-##Teste nessa aplicação de exemplo
+##Exemplo
 [App de exemplo do node-correios](http://correios-server.herokuapp.com/frete?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
 
 
