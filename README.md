@@ -204,12 +204,16 @@ No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://
 Retorno com **sucesso**
 
 ```
-{
-  Logradouro: 'Rua Guaraiúva - de 503/504 a 771/772',
-  Bairro: 'Cidade Monções',
-  Localidade: 'São Paulo /SP',
-  Cep: '00000000'
+  bairro: 'Ipanema',
+  cep: '22421030',
+  cidade: 'Rio de Janeiro',
+  complemento: {},
+  complemento2: {},
+  end: 'Rua Redentor',
+  id: '0',
+  uf: 'RJ'
 }
+
 ```
 
 Retorno com **erro**
