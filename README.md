@@ -45,10 +45,12 @@ correios.on('error', function (err) {
 correios.calcPreco(args, function (result) {
   console.log(result);
 });
+
 ```
 
-
 ##Documentação
+
+###Calcupar preço do frete
 No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
 
 - ```result``` - Array com o resultado da pesquisa
@@ -169,6 +171,51 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 	- S = sim
 	- N = não **PADRÃO**
 
+###Buscar CEP
+```javascript
+var Correios = require('node-correios'),
+    correios = new Correios();
+
+//Buscar endereço pelo CEP
+correios.consultaCEP({ cep: '00000000' });
+
+//quando o evento result for emitido faz um log do retorno da api
+correios.on('result', function (result) {
+  console.log(result);
+});
+
+//se ocorreu algum erro na execução faz um log do erro
+correios.on('error', function (err) {
+  console.log(err);
+});
+
+```
+
+No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
+
+- ```result``` - Objecto com o resultado da pesquisa
+
+#####Exemplo de resultado
+Retorno com **sucesso**
+
+```
+{
+  Logradouro: 'Rua Guaraiúva - de 503/504 a 771/772',
+  Bairro: 'Cidade Monções',
+  Localidade: 'São Paulo /SP',
+  Cep: '00000000'
+}
+```
+
+Retorno com **erro**
+
+```
+{
+  Erro: 404,
+  MsgError: 'Cep não encontrado'
+}
+
+```
 
 ##Autor
 
