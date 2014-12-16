@@ -31,7 +31,7 @@ var Correios = require('node-correios'),
 //executa o método de pesquisa de valor do frete
 correios.calcPreco(args);
 
-//qunado o evento result for emitido faz um log do retorno da api
+//quando o evento result for emitido faz um log do retorno da api
 correios.on('result', function (result) {
   console.log(result);
 });
