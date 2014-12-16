@@ -41,7 +41,7 @@ correios.on('error', function (err) {
   console.log(err);
 });
 
-//se você não quer um resultado assíncrono utilize um callback
+//você também pode utilize um callback
 correios.calcPreco(args, function (result) {
   console.log(result);
 });
@@ -187,6 +187,11 @@ correios.on('result', function (result) {
 //se ocorreu algum erro na execução faz um log do erro
 correios.on('error', function (err) {
   console.log(err);
+});
+
+//você também pode utilize um callback
+correios.consultaCEP({ cep: '045690sfsf01' }, function(result) {
+  console.log(result)
 });
 
 ```
