@@ -1,6 +1,6 @@
 {
   "name": "node-correios",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "NodeJS module for the SOAP API of the Brazilian mail service, Correios",
   "main": "index.js",
   "scripts": {
