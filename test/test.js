@@ -7,8 +7,8 @@ beforeEach(function () {
   correios = new Correios();
 });
 
-describe('Correios', function () {
-   it('should be an instance of Correios class', function () {
+describe('Correios class', function () {
+  it('should be an instance of Correios class', function () {
     var correiosInstance = Correios(),
         newCorreiosInstance = new Correios();
 
@@ -36,5 +36,37 @@ describe('Correios', function () {
   it('should have default address lookup arguments "cepArgs"', function () {
     correios.cepArgs.should.have.property('cepEntrada', '');
     correios.cepArgs.should.have.property('metodo', 'buscarCep');
+  });
+
+  it('should have default address lookup arguments "cepArgs"', function () {
+    correios.cepArgs.should.have.property('cepEntrada', '');
+    correios.cepArgs.should.have.property('metodo', 'buscarCep');
+  });
+});
+
+
+describe('Correios prototype', function () {
+  it('should have calcPreco', function () {
+    correios.should.have.property('calcPreco').which.is.a.Function;
+  });
+
+  it('should have calcPrecoPrazo', function () {
+    correios.should.have.property('calcPrecoPrazo').which.is.a.Function;
+  });
+
+  it('should have consultaCEP', function () {
+    correios.should.have.property('consultaCEP').which.is.a.Function;
+  });
+
+  it('should throw exception if no CEP is passed in the arguments { cep: 00000000 }', function () {
+    (function () {
+      correios.consultaCEP()
+    }).should.throw();
+  });
+
+  it('should not throw exception if CEP is passed in the arguments { cep: 00000000 }', function () {
+    (function () {
+      correios.consultaCEP({ cep: '00000000' })
+    }).should.not.throw();
   });
 });
