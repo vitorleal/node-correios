@@ -24,4 +24,17 @@ describe('Correios', function () {
     correios.calcPrecoUrl.should.eql('http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?wsdl');
     correios.cepUrl.should.eql('http://200.252.60.209/SigepCliente/AtendeClienteService?wsdl');
   });
+
+  it('should have default calculation arguments "calcArgs"', function () {
+    correios.calcArgs.should.have.property('nCdEmpresa', '');
+    correios.calcArgs.should.have.property('sDsSenha', '');
+    correios.calcArgs.should.have.property('sCdMaoPropria', 'N');
+    correios.calcArgs.should.have.property('nVlValorDeclarado', 0);
+    correios.calcArgs.should.have.property('sCdAvisoRecebimento', 'N');
+  });
+
+  it('should have default address lookup arguments "cepArgs"', function () {
+    correios.cepArgs.should.have.property('cepEntrada', '');
+    correios.cepArgs.should.have.property('metodo', 'buscarCep');
+  });
 });
