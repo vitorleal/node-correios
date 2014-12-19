@@ -30,6 +30,6 @@
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-watch": "latest",
     "mocha": "latest",
-    "should": "latest"
+    "should": "^4.4.1"
   }
 }
