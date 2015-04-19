@@ -1,14 +1,16 @@
-#Correios NodeJS
+#Correios Node.js
+
 [![Build Status](https://travis-ci.org/vitorleal/node-correios.svg?branch=master)](https://travis-ci.org/vitorleal/node-correios)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 [![NPM](https://nodei.co/npm/node-correios.png)](https://nodei.co/npm/node-correios/)
 
-Módulo de [NodeJS](http://nodejs.org) que utiliza a API SOAP dos Correios para calcular frete de envio e buscar endereço pelo CEP.
+Módulo de [Node.js](http://nodejs.org) que utiliza a API SOAP dos Correios para calcular frete de envio e buscar endereço pelo CEP.
 [API dos Correios](http://www.correios.com.br/webServices/PDF/SCPP_manual_implementacao_calculo_remoto_de_precos_e_prazos.pdf)
 
 
 ##Exemplo
+
 [App de exemplo do node-correios](http://correios-server.herokuapp.com/frete?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
 
 
@@ -22,7 +24,6 @@ npm install node-correios --save
 
 
 ##Como utilizar
-
 
 ```javascript
 var Correios = require('node-correios'),
@@ -51,11 +52,13 @@ correios.calcPreco(args, function (result) {
 ##Documentação
 
 ###Calcupar preço do frete
+
 No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
 
 - ```result``` - Array com o resultado da pesquisa
 
 #####Exemplo de resultado
+
 Retorno com **sucesso**
 
 ```
@@ -87,11 +90,13 @@ Retorno com **erro**
 - ```error```  - Retorna o erro ocorrido na execução
 
 #####Exemplo de erro
+
 ```
 Envie todos os campos obrigatórios
 ```
 
 ###Métodos
+
 Os métodos implementados são: calcPreco e calcPrecoPrazo
 
 #####correios.calcPreco(args);
@@ -101,6 +106,7 @@ Os métodos implementados são: calcPreco e calcPrecoPrazo
 Para executar o comando tem que enviar os campos **obrigatórios**. Para mais detalhes e informações veja o [PDF da API dos correios](http://www.correios.com.br/webServices/PDF/SCPP_manual_implementacao_calculo_remoto_de_precos_e_prazos.pdf)
 
 #######Obrigatórios
+
 - ``nCdServico`` - **String**
 
 	Código do serviço:
@@ -172,6 +178,7 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 	- N = não **PADRÃO**
 
 ###Buscar CEP
+
 ```javascript
 var Correios = require('node-correios'),
     correios = new Correios();
@@ -201,6 +208,7 @@ No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://
 - ```result``` - Objecto com o resultado da pesquisa
 
 #####Exemplo de resultado
+
 Retorno com **sucesso**
 
 ```
