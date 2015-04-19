@@ -242,4 +242,4 @@ Retorno com **erro**
 
 ##Licença
 
-Veja [LICENSE.txt](https://github.com/vitorleal/correios/blob/master/LICENSE.txt)
+Veja [LICENSE.txt](https://github.com/vitorleal/node-correios/blob/master/LICENSE.txt)
