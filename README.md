@@ -197,7 +197,7 @@ correios.on('error', function (err) {
 });
 
 //você também pode utilize um callback
-correios.consultaCEP({ cep: '045690sfsf01' }, function(result) {
+correios.consultaCEP({ cep: '00000000' }, function(result) {
   console.log(result)
 });
 
@@ -215,11 +215,8 @@ Retorno com **sucesso**
 {
   bairro: 'Ipanema',
   cep: '22421030',
-  cidade: 'Rio de Janeiro',
-  complemento: {},
-  complemento2: {},
-  end: 'Rua Redentor',
-  id: '0',
+  localidade: 'Rio de Janeiro',
+  logradouro: 'Rua Redentor',
   uf: 'RJ'
 }
 ```

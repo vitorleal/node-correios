@@ -22,7 +22,7 @@ describe('Correios class', function () {
 
   it('should have the correios WSDL urls', function () {
     correios.calcPrecoUrl.should.eql('http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?wsdl');
-    correios.cepUrl.should.eql('http://200.252.60.209/SigepCliente/AtendeClienteService?wsdl');
+    correios.cepUrl.should.eql('http://cep.correiocontrol.com.br/{CEP}.json');
   });
 
   it('should have default calculation arguments "calcArgs"', function () {
@@ -60,13 +60,13 @@ describe('Correios prototype', function () {
 
   it('should throw exception if no CEP is passed in the arguments { cep: 00000000 }', function () {
     (function () {
-      correios.consultaCEP()
+      correios.consultaCEP();
     }).should.throw();
   });
 
   it('should not throw exception if CEP is passed in the arguments { cep: 00000000 }', function () {
     (function () {
-      correios.consultaCEP({ cep: '00000000' })
+      correios.consultaCEP({ cep: '00000000' });
     }).should.not.throw();
   });
 });
