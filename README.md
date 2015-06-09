@@ -16,7 +16,7 @@ Módulo de [Node.js](http://nodejs.org) que utilizar a API SOAP dos Correios par
 
 ## Como instalar
 
-Para instalar é bem simples. Basta utilizar o [NPM](npmjs.org) utilizando a *flag* **--save** para guardar como dependência no seu **package.json**
+Basta utilizar o [NPM](npmjs.org) com a *flag* **--save** para guardar como dependência no seu **package.json**
 
 ```
 npm install node-correios --save
