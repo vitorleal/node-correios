@@ -11,7 +11,9 @@ Módulo de [Node.js](http://nodejs.org) que utilizar a API SOAP dos Correios par
 
 ## APP de Exemplo
 
-[App de exemplo do node-correios](http://correios-server.herokuapp.com/frete?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
+- Calcula frete - [link](http://correios-server.herokuapp.com/frete?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
+- Calcula frete/prazo - [link](http://correios-server.herokuapp.com/frete/prazo?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
+- Busca Cep - [link](http://correios-server.herokuapp.com/cep/22421010)
 
 
 ## Como instalar
