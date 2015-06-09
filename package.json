@@ -20,11 +20,9 @@
   "author": "Vitor Leal <vitorleal1@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^0.18.0",
     "extend": "^2.0.0",
     "request": "^2.51.0",
-    "soap": "^0.6.0",
-    "underscore": "^1.7.0"
+    "soap": "^0.6.0"
   },
   "devDependencies": {
     "grunt": "latest",
