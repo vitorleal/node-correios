@@ -5,11 +5,11 @@
 
 [![NPM](https://nodei.co/npm/node-correios.png)](https://nodei.co/npm/node-correios/)
 
-Módulo de [Node.js](http://nodejs.org) que utilizar a API SOAP dos Correios para calcular frete de envio e buscar endereço pelo CEP.
+Módulo de [Node.js](http://nodejs.org) que utilizar a API SOAP dos Correios para **calcular frete de envio** e **buscar endereço pelo CEP**.
 [API dos Correios](http://www.correios.com.br/webServices/PDF/SCPP_manual_implementacao_calculo_remoto_de_precos_e_prazos.pdf)
 
 
-## Exemplo
+## APP de Exemplo
 
 [App de exemplo do node-correios](http://correios-server.herokuapp.com/frete?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
 
@@ -23,7 +23,7 @@ npm install node-correios --save
 ```
 
 
-## Como utilizar
+## Como utilizar o calculo de frete
 
 ```javascript
 var Correios = require('node-correios'),
@@ -177,7 +177,8 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 	- S = sim
 	- N = não **PADRÃO**
 
-### Buscar CEP
+
+### Como utilizar a buscar por CEP
 
 ```javascript
 var Correios = require('node-correios'),
