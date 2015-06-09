@@ -3,14 +3,17 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jshint: {
-      lib: {
-        src: ['Gruntfile.js', 'lib/*.js', 'index.js']
-      }
+        all: {
+          src: ['Gruntfile.js', 'lib/*.js', 'index.js'],
+        },
+        options: {
+          jshintrc: '.jshintrc'
+        }
     },
     watch: {
       lib: {
-        files: '<%= jshint.lib.src %>',
-        tasks: ['jshint:lib']
+        files: '<%= jshint.all.src %>',
+        tasks: ['jshint:all']
       }
     }
   });
