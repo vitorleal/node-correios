@@ -49,8 +49,6 @@ correios.calcPreco(args, function (result) {
 
 ```
 
-## Documentação
-
 ### Calcupar preço do frete
 
 No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
@@ -178,7 +176,7 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 	- N = não **PADRÃO**
 
 
-### Como utilizar a buscar por CEP
+## Como utilizar a buscar por CEP
 
 ```javascript
 var Correios = require('node-correios'),
