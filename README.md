@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/vitorleal/node-correios)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/vitorleal/node-correios)
 
-[![NPM](https://nodei.co/npm/node-correios.png)](https://nodei.co/npm/node-correios/)
+[![NPM](https://nodei.co/npm/node-correios.png?mini=true)](https://nodei.co/npm/node-correios/)
 
 Módulo de [Node.js](http://nodejs.org) que utilizar a API SOAP dos Correios para **calcular frete de envio** e **buscar endereço pelo CEP**.
 [API dos Correios](http://www.correios.com.br/webServices/PDF/SCPP_manual_implementacao_calculo_remoto_de_precos_e_prazos.pdf)
