@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/vitorleal/node-correios.svg?branch=master)](https://travis-ci.org/vitorleal/node-correios)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![npm](https://img.shields.io/npm/v/npm.svg)]()
+[![npm](https://img.shields.io/npm/l/express.svg)]()
 
 [![NPM](https://nodei.co/npm/node-correios.png)](https://nodei.co/npm/node-correios/)
 
@@ -232,12 +234,15 @@ Retorno com **erro**
 
 ```
 
+
 ## Autor
 
 | [![twitter/vitorleal](http://gravatar.com/avatar/e133221d7fbc0dee159dca127d2f6f00?s=80)](http://twitter.com/vitorleal "Follow @vitorleal on Twitter") |
 |---|
 | [Vitor Leal](http://vitorleal.com) |
 
+
 ## Licença
 
 Veja [LICENSE.txt](https://github.com/vitorleal/node-correios/blob/master/LICENSE.txt)
+
