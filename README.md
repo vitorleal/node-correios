@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/vitorleal/node-correios.svg?branch=master)](https://travis-ci.org/vitorleal/node-correios)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
-[![npm](https://img.shields.io/npm/v/npm.svg)]()
-[![npm](https://img.shields.io/npm/l/express.svg)]()
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/vitorleal/node-correios)
+[![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/vitorleal/node-correios)
 
 [![NPM](https://nodei.co/npm/node-correios.png)](https://nodei.co/npm/node-correios/)
 
