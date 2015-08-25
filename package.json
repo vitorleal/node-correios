@@ -4,7 +4,7 @@
   "description": "Node.js module for the Brazilian mail service, Correios",
   "main": "index.js",
   "scripts": {
-    "test": "make test"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "keywords": [
     "correios",
