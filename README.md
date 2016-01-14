@@ -56,7 +56,7 @@ Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo par
 ```
 
 Caso algum parâmetro esteja errado, ou o serviço esteja indisponível para o CEP de destino, o objeto retornado no
-`callback` conterá a propriedade `Erro` diferente de '0' e conterá uma mensagem de erro no parâmetro `MsgErro`.
+`callback` conterá a propriedade `Erro` como um código de erro e conterá uma mensagem de erro no parâmetro `MsgErro`.
 
 ```
 [{
@@ -74,10 +74,21 @@ Caso algum parâmetro esteja errado, ou o serviço esteja indisponível para o C
 Em caso de erro na consulta ao WebService dos Correios, o `callback` receberá o erro como primeiro parâmetro.
 
 Para consultar mais de um serviço na mesma requisição, basta passar vários códigos de serviço, separados por vírgula,
-para o parâmetro `nCdServico` (ver descrição dos parâmetros abaixo). Neste caso, a resposta conterá um objeto por código
-informado, sendo que alguns podem apresentar erro e outros podem ter tido sucesso.
+para o parâmetro `nCdServico` (ver descrição dos parâmetros abaixo). Neste caso, o array da resposta conterá um objeto 
+por cada código informado, sendo que alguns podem apresentar erro e outros podem ter tido sucesso.
 
-```
+
+``` javascript
+var args = {
+	nCdServico: '40010,41106,40215',
+	// demais parâmetros ...
+}
+
+correios.calcPreco(args, function (err, result) {
+	console.log(result);
+});
+
+// result: 
 [{
 	Codigo: 40010,
 	Valor: '24,10',
