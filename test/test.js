@@ -16,10 +16,6 @@ describe('Correios class', function() {
     newCorreiosInstance.should.be.an.instanceOf(Correios);
   });
 
-  it('should be an instance of EventEmitter', function() {
-    correios.should.be.an.instanceOf(events.EventEmitter);
-  });
-
   it('should have the correios WSDL urls', function() {
     correios.calcPrecoUrl.should.eql('http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?wsdl');
     correios.cepUrl.should.eql('http://cep.correiocontrol.com.br/{CEP}.json');
