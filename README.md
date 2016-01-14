@@ -50,12 +50,63 @@ Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo par
 	ValorMaoPropria: '0,00',
 	ValorAvisoRecebimento: '0,00',
 	ValorValorDeclarado: '0,00',
-	Erro: {},
+	Erro: '0',
 	MsgErro: {}
 }]
 ```
 
+Caso algum parâmetro esteja errado, ou o serviço esteja indisponível para o CEP de destino, o objeto retornado no
+`callback` conterá a propriedade `Erro` diferente de '0' e conterá uma mensagem de erro no parâmetro `MsgErro`.
+
+```
+[{
+	Codigo: 40215,
+	Valor: '0',
+	ValorMaoPropria: '0',
+	ValorAvisoRecebimento: '0',
+	ValorValorDeclarado: '0',
+	Erro: '008',
+	MsgErro: 'Serviço indisponível para o trecho informado.',
+	ValorSemAdicionais: '0' 
+}]
+```
+
 Em caso de erro na consulta ao WebService dos Correios, o `callback` receberá o erro como primeiro parâmetro.
+
+Para consultar mais de um serviço na mesma requisição, basta passar vários códigos de serviço, separados por vírgula,
+para o parâmetro `nCdServico` (ver descrição dos parâmetros abaixo). Neste caso, a resposta conterá um objeto por código
+informado, sendo que alguns podem apresentar erro e outros podem ter tido sucesso.
+
+```
+[{
+	Codigo: 40010,
+	Valor: '24,10',
+	ValorMaoPropria: '0,00',
+	ValorAvisoRecebimento: '0,00',
+	ValorValorDeclarado: '0,00',
+	Erro: {},
+	MsgErro: {},
+	ValorSemAdicionais: '24,10'
+},{
+	Codigo: 41106,
+	Valor: '16,80',
+	ValorMaoPropria: '0,00',
+	ValorAvisoRecebimento: '0,00',
+	ValorValorDeclarado: '0,00',
+	Erro: {},
+	MsgErro: {},
+	ValorSemAdicionais: '16,80' 
+},{
+	Codigo: 40215,
+	Valor: '0',
+	ValorMaoPropria: '0',
+	ValorAvisoRecebimento: '0',
+	ValorValorDeclarado: '0',
+	Erro: '008',
+	MsgErro: 'Serviço indisponível para o trecho informado.',
+	ValorSemAdicionais: '0'
+}]
+```
 
 
 ### Métodos
