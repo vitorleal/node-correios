@@ -1,6 +1,6 @@
 {
   "name": "node-correios",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "description": "Node.js module for the Brazilian mail service, Correios",
   "main": "index.js",
   "scripts": {
