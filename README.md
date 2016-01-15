@@ -33,35 +33,15 @@ npm install node-correios --save
 var Correios = require('node-correios'),
     correios = new Correios();
 
-//executa o método de pesquisa de valor do frete
-correios.calcPreco(args);
-
-//quando o evento result for emitido faz um log do retorno da api
-correios.on('result', function (result) {
-  console.log(result);
-});
-
-//se ocorreu algum erro na execução faz um log do erro
-correios.on('error', function (err) {
-  console.log(err);
-});
-
-//você também pode utilize um callback
-correios.calcPreco(args, function (result) {
+correios.calcPreco(args, function (err, result) {
   console.log(result);
 });
 
 ```
 
-### Calcupar preço do frete
-
-No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
-
-- ```result``` - Array com o resultado da pesquisa
-
 ##### Exemplo de resultado
 
-Retorno com **sucesso**
+Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo parâmetro, similar a:
 
 ```
 [{
@@ -70,32 +50,75 @@ Retorno com **sucesso**
 	ValorMaoPropria: '0,00',
 	ValorAvisoRecebimento: '0,00',
 	ValorValorDeclarado: '0,00',
-	Erro: {},
+	Erro: '0',
 	MsgErro: {}
 }]
 ```
 
-Retorno com **erro**
+Caso algum parâmetro esteja errado, ou o serviço esteja indisponível para o CEP de destino, o objeto retornado no
+`callback` conterá a propriedade `Erro` como um código de erro e conterá uma mensagem de erro no parâmetro `MsgErro`.
 
 ```
 [{
-	Codigo: 40010,
-	Valor: '0,00',
-	ValorMaoPropria: '0,00',
-	ValorAvisoRecebimento: '0,00',
-	ValorValorDeclarado: '0,00',
-	Erro: '-20',
-	MsgErro: 'A largura nao pode ser inferior a 11 cm.'
+	Codigo: 40215,
+	Valor: '0',
+	ValorMaoPropria: '0',
+	ValorAvisoRecebimento: '0',
+	ValorValorDeclarado: '0',
+	Erro: '008',
+	MsgErro: 'Serviço indisponível para o trecho informado.',
+	ValorSemAdicionais: '0' 
 }]
 ```
 
-- ```error```  - Retorna o erro ocorrido na execução
+Em caso de erro na consulta ao WebService dos Correios, o `callback` receberá o erro como primeiro parâmetro.
 
-##### Exemplo de erro
+Para consultar mais de um serviço na mesma requisição, basta passar vários códigos de serviço, separados por vírgula,
+para o parâmetro `nCdServico` (ver descrição dos parâmetros abaixo). Neste caso, o array da resposta conterá um objeto 
+por cada código informado, sendo que alguns podem apresentar erro e outros podem ter tido sucesso.
 
+
+``` javascript
+var args = {
+	nCdServico: '40010,41106,40215',
+	// demais parâmetros ...
+}
+
+correios.calcPreco(args, function (err, result) {
+	console.log(result);
+});
+
+// result: 
+[{
+	Codigo: 40010,
+	Valor: '24,10',
+	ValorMaoPropria: '0,00',
+	ValorAvisoRecebimento: '0,00',
+	ValorValorDeclarado: '0,00',
+	Erro: {},
+	MsgErro: {},
+	ValorSemAdicionais: '24,10'
+},{
+	Codigo: 41106,
+	Valor: '16,80',
+	ValorMaoPropria: '0,00',
+	ValorAvisoRecebimento: '0,00',
+	ValorValorDeclarado: '0,00',
+	Erro: {},
+	MsgErro: {},
+	ValorSemAdicionais: '16,80' 
+},{
+	Codigo: 40215,
+	Valor: '0',
+	ValorMaoPropria: '0',
+	ValorAvisoRecebimento: '0',
+	ValorValorDeclarado: '0',
+	Erro: '008',
+	MsgErro: 'Serviço indisponível para o trecho informado.',
+	ValorSemAdicionais: '0'
+}]
 ```
-Envie todos os campos obrigatórios
-```
+
 
 ### Métodos
 
@@ -186,33 +209,17 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 var Correios = require('node-correios'),
     correios = new Correios();
 
-//Buscar endereço pelo CEP
-correios.consultaCEP({ cep: '00000000' });
-
-//quando o evento result for emitido faz um log do retorno da api
-correios.on('result', function (result) {
-  console.log(result);
-});
-
-//se ocorreu algum erro na execução faz um log do erro
-correios.on('error', function (err) {
-  console.log(err);
-});
-
-//você também pode utilize um callback
-correios.consultaCEP({ cep: '00000000' }, function(result) {
+correios.consultaCEP({ cep: '00000000' }, function(err, result) {
   console.log(result)
 });
 
 ```
 
-No exemplo anterior a variável **correios** é um objeto *[EventEmiter](http://nodejs.org/api/events.html)*. Você pode "escutar" pelos seguintes eventos:
 
-- ```result``` - Objecto com o resultado da pesquisa
 
 ##### Exemplo de resultado
 
-Retorno com **sucesso**
+Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo parâmetro, similar a:
 
 ```
 {
@@ -224,15 +231,7 @@ Retorno com **sucesso**
 }
 ```
 
-Retorno com **erro**
-
-```
-{
-  Erro: 404,
-  MsgError: 'Cep não encontrado'
-}
-
-```
+Em caso de erro na consulta ao WebService dos Correios, o `callback` receberá o erro ocorrido como primeiro parâmetro.
 
 
 ## Autor
