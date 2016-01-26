@@ -67,14 +67,14 @@ Caso algum parâmetro esteja errado, ou o serviço esteja indisponível para o C
 	ValorValorDeclarado: '0',
 	Erro: '008',
 	MsgErro: 'Serviço indisponível para o trecho informado.',
-	ValorSemAdicionais: '0' 
+	ValorSemAdicionais: '0'
 }]
 ```
 
 Em caso de erro na consulta ao WebService dos Correios, o `callback` receberá o erro como primeiro parâmetro.
 
 Para consultar mais de um serviço na mesma requisição, basta passar vários códigos de serviço, separados por vírgula,
-para o parâmetro `nCdServico` (ver descrição dos parâmetros abaixo). Neste caso, o array da resposta conterá um objeto 
+para o parâmetro `nCdServico` (ver descrição dos parâmetros abaixo). Neste caso, o array da resposta conterá um objeto
 por cada código informado, sendo que alguns podem apresentar erro e outros podem ter tido sucesso.
 
 
@@ -88,7 +88,7 @@ correios.calcPreco(args, function (err, result) {
 	console.log(result);
 });
 
-// result: 
+// result:
 [{
 	Codigo: 40010,
 	Valor: '24,10',
@@ -106,7 +106,7 @@ correios.calcPreco(args, function (err, result) {
 	ValorValorDeclarado: '0,00',
 	Erro: {},
 	MsgErro: {},
-	ValorSemAdicionais: '16,80' 
+	ValorSemAdicionais: '16,80'
 },{
 	Codigo: 40215,
 	Valor: '0',
@@ -232,6 +232,22 @@ Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo par
 ```
 
 Em caso de erro na consulta ao WebService dos Correios, o `callback` receberá o erro ocorrido como primeiro parâmetro.
+
+
+## Testes unitários
+
+Para rodas os testes unitários, depois de instalar as dependências do projeto com o ```npm install```, execute o comando:
+
+```
+$ npm test
+```
+
+Para incluir seus testes unitários, eles se encontram na pasta ```./test```
+
+
+## Contribuições
+
+Para contribuir com o projeto basta seguir as seguintes intruções: [Link](https://github.com/vitorleal/node-correios/wiki/Contribui%C3%A7%C3%B5es)
 
 
 ## Autor
