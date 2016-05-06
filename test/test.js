@@ -18,7 +18,7 @@ describe('Correios class', function() {
 
   it('should have the correios WSDL urls', function() {
     correios.calcPrecoUrl.should.eql('http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx?wsdl');
-    correios.cepUrl.should.eql('http://cep.correiocontrol.com.br/{CEP}.json');
+    correios.cepUrl.should.eql('http://viacep.com.br/ws/{CEP}/json');
   });
 
   it('should have default calculation arguments "calcArgs"', function() {
