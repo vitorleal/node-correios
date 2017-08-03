@@ -22,7 +22,7 @@
   "dependencies": {
     "extend": "^2.0.1",
     "request": "^2.67.0",
-    "soap": "^0.6.1"
+    "soap": "^0.19.2"
   },
   "devDependencies": {
     "grunt": "latest",
