@@ -55,7 +55,7 @@ describe('Correios prototype', function() {
 
   it('should throw exception if no CEP is passed in the arguments { cep: 00000000 }', function() {
     (function() {
-      correios.consultaCEP();
+      return correios.consultaCEP();
     }).should.throw();
   });
 
