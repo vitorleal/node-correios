@@ -37,6 +37,11 @@ correios.calcPreco(args, function (err, result) {
   console.log(result);
 });
 
+//Com promises
+
+correios.calcPreco(args).then(result => console.log(result));
+
+
 ```
 
 ##### Exemplo de resultado
@@ -212,6 +217,10 @@ var Correios = require('node-correios'),
 correios.consultaCEP({ cep: '00000000' }, function(err, result) {
   console.log(result)
 });
+
+//Ou
+
+correios.consultaCEP({ cep: '00000000' }).then(result => console.log(result));
 
 ```
 
