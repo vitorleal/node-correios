@@ -28,7 +28,7 @@
     "grunt": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-watch": "latest",
-    "mocha": "latest",
+    "mocha": "^5.2.0",
     "should": "^13.2.3"
   },
   "engines": {
