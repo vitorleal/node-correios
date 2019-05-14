@@ -1,7 +1,7 @@
 {
-  "name": "node-correios",
+  "name": "la-node-correios",
   "version": "2.2.1",
-  "description": "Node.js module for the Brazilian mail service, Correios",
+  "description": "Fork of node-correios with some speed improvement. Node.js module for the Brazilian mail service, Correios",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec"
@@ -33,5 +33,8 @@
   },
   "engines": {
     "node": ">=4.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://nexus01.lifeapps.com.br/repository/npm-private-lifeapps/"
   }
 }
