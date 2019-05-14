@@ -1,6 +1,6 @@
 {
   "name": "la-node-correios",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Fork of node-correios with some speed improvement. Node.js module for the Brazilian mail service, Correios",
   "main": "index.js",
   "scripts": {
