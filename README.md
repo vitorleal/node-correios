@@ -8,7 +8,7 @@
 [![NPM](https://nodei.co/npm/node-correios.png?mini=true)](https://nodei.co/npm/node-correios/)
 
 Módulo de [Node.js](http://nodejs.org) que utilizar a API SOAP dos Correios para **calcular frete de envio** e **buscar endereço pelo CEP**.
-[API dos Correios](http://www.correios.com.br/para-voce/correios-de-a-a-z/pdf/calculador-remoto-de-precos-e-prazos/manual-de-implementacao-do-calculo-remoto-de-precos-e-prazos)
+[API dos Correios](http://www.correios.com.br/precos-e-prazos/calculador-remoto-de-precos-e-prazos)
 
 
 ## APP de Exemplo
@@ -133,18 +133,20 @@ Os métodos implementados são: calcPreco e calcPrecoPrazo
 
 ##### correios.calcPrecoPrazo(args);
 
-Para executar o comando tem que enviar os campos **obrigatórios**. Para mais detalhes e informações veja o [PDF da API dos correios](http://www.correios.com.br/para-voce/correios-de-a-a-z/pdf/calculador-remoto-de-precos-e-prazos/manual-de-implementacao-do-calculo-remoto-de-precos-e-prazos)
+Para executar o comando tem que enviar os campos **obrigatórios**. Para mais detalhes e informações veja o [PDF da API dos correios](http://www.correios.com.br/a-a-z/pdf/calculador-remoto-de-precos-e-prazos/manual-de-implementacao-do-calculo-remoto-de-precos-e-prazos)
 
 ###### Obrigatórios
 
 - ``nCdServico`` - **String**
 
 	Código do serviço:
-	- 40010 = SEDEX Varejo
-	- 40045 = SEDEX a Cobrar Varejo
-	- 40215 = SEDEX 10 Varejo
+	- 04014 = SEDEX à vista
+	- 04065 = SEDEX à vista pagamento na entrega
+	- 04510 = PAC à vista
+	- 04707 = PAC à vista pagamento na entrega
+	- 40169 = SEDEX12 ( à vista e a faturar)
+	- 40215 = SEDEX 10 (à vista e a faturar)
 	- 40290 = SEDEX Hoje Varejo
-	- 41106 = PAC Varejo
 
 - ``sCepOrigem`` - **String**
 
