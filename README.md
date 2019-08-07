@@ -1,7 +1,5 @@
 # Correios Node.js
-
 [![Build Status](https://travis-ci.org/vitorleal/node-correios.svg?branch=master)](https://travis-ci.org/vitorleal/node-correios)
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/vitorleal/node-correios)
 [![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/vitorleal/node-correios)
 
@@ -11,44 +9,32 @@ Módulo de [Node.js](http://nodejs.org) que utilizar a API SOAP dos Correios par
 [API dos Correios](http://www.correios.com.br/precos-e-prazos/calculador-remoto-de-precos-e-prazos)
 
 
-## APP de Exemplo
-
-- Calcular frete - [link](http://correios-server.herokuapp.com/frete?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
-- Calcular frete/prazo - [link](http://correios-server.herokuapp.com/frete/prazo?nCdServico=40010,40045&sCepOrigem=22041030&sCepDestino=04569001&nVlPeso=1&nCdFormato=1&nVlComprimento=20&nVlAltura=4&nVlLargura=11&nVlDiametro=20&nVlValorDeclarado=500)
-- Buscar Cep - [link](http://correios-server.herokuapp.com/cep/22421010)
-
-
 ## Como instalar
-
-Basta utilizar o [NPM](npmjs.org) com a *flag* **--save** para guardar como dependência no seu **package.json**
 
 ```
 npm install node-correios --save
 ```
 
-
 ## Como utilizar o calculo de frete
 
 ```javascript
-var Correios = require('node-correios'),
-    correios = new Correios();
+let Correios = require('node-correios');
+let correios = new Correios();
 
-correios.calcPreco(args, function (err, result) {
+correios.calcPreco(args)
+.then(result => {
   console.log(result);
+})
+.catch(error => {
+  console.log(error);
 });
-
-//Com promises
-
-correios.calcPreco(args).then(result => console.log(result));
-
-
 ```
 
-##### Exemplo de resultado
+#### Respostas
 
-Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo parâmetro, similar a:
+Com sucesso:
 
-```
+```javascript
 [{
 	Codigo: 40010,
 	Valor: '23,30',
@@ -60,10 +46,9 @@ Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo par
 }]
 ```
 
-Caso algum parâmetro esteja errado, ou o serviço esteja indisponível para o CEP de destino, o objeto retornado no
-`callback` conterá a propriedade `Erro` como um código de erro e conterá uma mensagem de erro no parâmetro `MsgErro`.
+Com erro:
 
-```
+```javascript
 [{
 	Codigo: 40215,
 	Valor: '0',
@@ -76,24 +61,27 @@ Caso algum parâmetro esteja errado, ou o serviço esteja indisponível para o C
 }]
 ```
 
-Em caso de erro na consulta ao WebService dos Correios, o `callback` receberá o erro como primeiro parâmetro.
-
 Para consultar mais de um serviço na mesma requisição, basta passar vários códigos de serviço, separados por vírgula,
 para o parâmetro `nCdServico` (ver descrição dos parâmetros abaixo). Neste caso, o array da resposta conterá um objeto
 por cada código informado, sendo que alguns podem apresentar erro e outros podem ter tido sucesso.
 
 
-``` javascript
-var args = {
+```javascript
+let args = {
 	nCdServico: '40010,41106,40215',
 	// demais parâmetros ...
 }
 
-correios.calcPreco(args, function (err, result) {
-	console.log(result);
+correios.calcPreco(args)
+.then(result => {
+  console.log(result);
+})
+.catch(error => {
+  console.log(error)
 });
+```
 
-// result:
+```javascript
 [{
 	Codigo: 40010,
 	Valor: '24,10',
@@ -213,26 +201,21 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 ## Como utilizar a buscar por CEP
 
 ```javascript
-var Correios = require('node-correios'),
-    correios = new Correios();
+let Correios = require('node-correios');
+let correios = new Correios();
 
-correios.consultaCEP({ cep: '00000000' }, function(err, result) {
-  console.log(result)
+correios.consultaCEP({ cep: '00000000' })
+.then(result => {
+  console.log(result);
+})
+.catch(error => {
+  console.log(error;)
 });
-
-//Ou
-
-correios.consultaCEP({ cep: '00000000' }).then(result => console.log(result));
-
 ```
 
+##### Resposta
 
-
-##### Exemplo de resultado
-
-Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo parâmetro, similar a:
-
-```
+```javascript
 {
   bairro: 'Ipanema',
   cep: '22421030',
@@ -242,23 +225,14 @@ Caso a consulta tenha sucesso, o `callback` receberá um objeto como segundo par
 }
 ```
 
-Em caso de erro na consulta ao WebService dos Correios, o `callback` receberá o erro ocorrido como primeiro parâmetro.
-
 
 ## Testes unitários
 
-Para rodas os testes unitários, depois de instalar as dependências do projeto com o ```npm install```, execute o comando:
+Para rodas os testes unitários:
 
 ```
 $ npm test
 ```
-
-Para incluir seus testes unitários, eles se encontram na pasta ```./test```
-
-
-## Contribuições
-
-Para contribuir com o projeto basta seguir as seguintes intruções: [Link](https://github.com/vitorleal/node-correios/wiki/Contribui%C3%A7%C3%B5es)
 
 
 ## Autor

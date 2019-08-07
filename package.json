@@ -1,6 +1,6 @@
 {
   "name": "node-correios",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "Node.js module for the Brazilian mail service, Correios",
   "main": "index.js",
   "scripts": {
@@ -20,9 +20,8 @@
   "author": "Vitor Leal <vitorleal1@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "extend": "^2.0.1",
     "request": "^2.67.0",
-    "soap": "^0.19.2"
+    "soap": "^0.29.0"
   },
   "devDependencies": {
     "grunt": "latest",
@@ -31,7 +30,7 @@
     "mocha": "latest",
     "should": "^4.4.1"
   },
-  "engines" :  { 
-      "node" : ">=4.0.0" 
-    } 
+  "engines": {
+    "node": ">=8.0.0"
+  }
 }
