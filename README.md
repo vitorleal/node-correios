@@ -34,7 +34,7 @@ correios.calcPreco(args)
 
 Com sucesso:
 
-```json
+```javascript
 [{
 	Codigo: 40010,
 	Valor: '23,30',
@@ -48,7 +48,7 @@ Com sucesso:
 
 Com erro:
 
-```json
+```javascript
 [{
 	Codigo: 40215,
 	Valor: '0',
@@ -66,7 +66,7 @@ para o parâmetro `nCdServico` (ver descrição dos parâmetros abaixo). Neste c
 por cada código informado, sendo que alguns podem apresentar erro e outros podem ter tido sucesso.
 
 
-``` javascript
+```javascript
 let args = {
 	nCdServico: '40010,41106,40215',
 	// demais parâmetros ...
@@ -81,7 +81,7 @@ correios.calcPreco(args)
 });
 ```
 
-```json
+```javascript
 [{
 	Codigo: 40010,
 	Valor: '24,10',
@@ -215,7 +215,7 @@ correios.consultaCEP({ cep: '00000000' })
 
 ##### Resposta
 
-```
+```javascript
 {
   bairro: 'Ipanema',
   cep: '22421030',
