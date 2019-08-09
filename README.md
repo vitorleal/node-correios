@@ -208,7 +208,7 @@ correios.consultaCEP({ cep: '00000000' })
   console.log(result);
 })
 .catch(error => {
-  console.log(error;)
+  console.log(error);
 });
 ```
 
