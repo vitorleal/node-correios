@@ -22,6 +22,7 @@ describe('Correios class', function() {
   });
 });
 
+// TODO: these tests should have mocks and test the methods properly
 describe('Correios prototype', function() {
   it('should have calcPreco', function() {
     correios.should.have.property('calcPreco').which.is.a.Function;
