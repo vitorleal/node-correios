@@ -196,7 +196,7 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 
 - ``sCdAvisoRecebimento`` - **String**
 
-	Indica se a encomenda será entregue com o serviço adicional mão própria
+	Indica se a encomenda será entregue com o serviço adicional de aviso de recebimento
 	- S = sim
 	- N = não **PADRÃO**
 
