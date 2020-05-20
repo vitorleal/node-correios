@@ -16,9 +16,13 @@ npm install node-correios --save
 
 ## Como utilizar o calculo de frete
 
+Para a ver a lista de parâmetros aceitos em `args`, acesse [Métodos](#métodos)
+
 ```javascript
 let Correios = require('node-correios');
 let correios = new Correios();
+
+let args = {}
 
 correios.calcPreco(args)
 .then(result => {
@@ -192,7 +196,7 @@ Para executar o comando tem que enviar os campos **obrigatórios**. Para mais de
 
 - ``sCdAvisoRecebimento`` - **String**
 
-	Indica se a encomenda será entregue com o serviço adicional mão própria
+	Indica se a encomenda será entregue com o serviço adicional de aviso de recebimento
 	- S = sim
 	- N = não **PADRÃO**
 
